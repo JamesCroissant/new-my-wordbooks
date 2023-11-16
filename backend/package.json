@@ -2,12 +2,12 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
+  "type": "commonjs",
   "main": "server.js",
   "scripts": {
     "build" : "tsc",
-    "start": "node src/server.js",
-    "dev": "nodemon index.js"
+    "start": "node dist/server.js",
+    "dev": "nodemon dist/server.js"
   },
   "keywords": [],
   "author": "",
