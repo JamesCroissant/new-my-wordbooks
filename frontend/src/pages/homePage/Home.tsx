@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Button } from 'react-bootstrap';
 import "./Home.css";
-import logo from "../../images/logo-mywordbooks.png";
-
+import logo from "../../assets/images/logo-mywordbooks.png";
 
 const Home: React.FC = () => {
   return (
