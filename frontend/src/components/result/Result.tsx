@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import { QuizProps } from "../../pages/quiz/Quiz";
-import { useState } from "react";
 
 
 type Result = {

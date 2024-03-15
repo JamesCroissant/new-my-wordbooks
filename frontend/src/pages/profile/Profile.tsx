@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import "./Profile.css";
 import { AuthContext } from "../../context/AuthContext";
 import axios from 'axios';
-import { Word } from '../../types/wordType';
 import { User } from '../../types';
 
 
