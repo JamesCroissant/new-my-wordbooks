@@ -17,7 +17,7 @@ app.use("/api/words", wordRoute);
 
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Hello, Hello!");
+  res.send("Hello, Hello, Hello!");
 });
 
 export default app;
