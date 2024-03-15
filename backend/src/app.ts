@@ -7,7 +7,6 @@ import wordRoute from './routes/words';
 import path from "path";
 
 
-
 const app: Express = express();
 
 // Middleware

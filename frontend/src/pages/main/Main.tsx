@@ -57,7 +57,7 @@ const Main = () => {
 
   return (
     <Container className="mt-5">
-      <Row className="justify-content-md-center">
+      <Row className="justify-content-center">
         <Col md={6}>
           <div className="mb-4">
             <p className="fs-5 text-center">分からない単語と意味を入力してね！</p>
