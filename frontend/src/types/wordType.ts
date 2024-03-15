@@ -6,5 +6,4 @@ export type Word = {
   isCorrect: boolean;
 }
 
-// export type NewWord = Omit<Word, '_id', 'isCorrect'>;
 export type NewWord = Omit<Word, '_id' | 'isCorrect'>;

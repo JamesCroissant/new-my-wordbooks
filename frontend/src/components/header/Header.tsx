@@ -1,12 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { AuthAction } from '../../store/AuthActions';
-import Login from '../../pages/login/Login';
+
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const { state, dispatch } = useContext(AuthContext);
 
   const handleLogout = () => {

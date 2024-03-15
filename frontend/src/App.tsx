@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import './App.css';
 import Home from './pages/home/Home';
@@ -7,7 +7,6 @@ import Register from './pages/register/Register';
 import Layout from './pages/Layout';
 import Main from './pages/main/Main';
 import Profile from './pages/profile/Profile';
-import Form from './pages/main/Main';
 import WordList from './pages/wordlist/WordList';
 import Quiz from './pages/quiz/Quiz';
 
@@ -17,13 +16,7 @@ import Result from './components/result/Result';
 
 
 function App() {
-  // const loggedIn = localStorage.getItem('user')
-  // console.log(loggedIn)
   const { state, dispatch } = useContext(AuthContext);
-
-  // useEffect(() => {
-
-  // }, [])
 
   return (
     <div className="App">

@@ -5,7 +5,6 @@ import "./Quiz.css";
 import { Word } from '../../types/wordType';
 import { useNavigate } from 'react-router-dom';
 import { MoonLoader } from 'react-spinners';
-import Result from "../../components/result/Result";
 import QuizCard from "../../components/quizcard/QuizCard";
 
 
