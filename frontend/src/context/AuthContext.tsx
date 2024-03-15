@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer, useEffect, ReactNode, Dispatch, PropsWithChildren, FC } from "react";
+import React, { createContext, useContext, useReducer } from "react";
 import AuthReducer from "../store/AuthReducer";
 import { AuthState } from "../types";
 import { AuthAction } from '../store/AuthActions';
@@ -28,7 +28,7 @@ export const AuthContext = createContext<AuthContextType>({
 });
 
 
-export const AuthContextProvider: React.FC<AuthContextProviderProps> = ({ children }) => {
+export const AuthContextProvider: React.FC<AuthContextProviderProps> = ({ children } : {children: React.ReactNode}) => {
   const [state, dispatch] = useReducer(AuthReducer, initialState);
 
   return (

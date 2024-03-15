@@ -1,7 +1,7 @@
 import { User } from './index';
 import { AuthAction } from '../store/AuthActions';
 
-export interface AuthState {
+export type AuthState = {
   user: User | null;
   isFetching: boolean;
   error: string;

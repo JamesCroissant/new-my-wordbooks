@@ -6,7 +6,7 @@ const router = express.Router();
 
 // UPDATE USER INFO
 router.put("/:id", async (req: Request, res: Response) => {
-  if (req.body.userId === req.params.id || req.body.isAdmin) {
+  if (req.body._id === req.params.id || req.body.isAdmin) {
     try {
       const user = await User.findByIdAndUpdate(req.params.id, {
         $set: req.body,

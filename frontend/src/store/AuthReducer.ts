@@ -1,5 +1,5 @@
 import { AuthAction } from "./AuthActions";
-import { AuthState } from "../types/authTypes";
+import { AuthState } from "../types/authType";
 
 
 const AuthReducer = (state: AuthState, action: AuthAction): AuthState => {
@@ -22,12 +22,21 @@ const AuthReducer = (state: AuthState, action: AuthAction): AuthState => {
         isFetching: false,
         error: action.payload,
       };
+    case 'UPDATE_USER':
+      return {
+        ...state,
+        user: action.payload,
+      };
+    case 'DELETE_USER':
+      return {
+        ...state,
+        user: null,
+      }
     case "LOGOUT":
       return {
         ...state,
         user: null,
       };
-
     default:
       return state;
   }

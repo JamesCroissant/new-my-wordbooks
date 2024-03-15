@@ -29,7 +29,7 @@ router.post("/", async (req: Request, res: Response) => {
 router.put("/:id", async (req: Request, res: Response) => {
   try {
     const word = await Word.findById(req.params.id);
-    if (word && word.userId === req.body.userId) {
+    if (word && word.userId.toString() === req.body.userId) {
       await word.updateOne({ $set: req.body });
       return res.status(200).json("You can succeed in editing word");
     } else {
@@ -39,6 +39,7 @@ router.put("/:id", async (req: Request, res: Response) => {
     return res.status(500).json(err);
   }
 });
+
 
 // DELETE WORD
 router.delete("/:id", async (req: Request, res: Response) => {
@@ -54,6 +55,7 @@ router.delete("/:id", async (req: Request, res: Response) => {
     return res.status(500).json(err);
   }
 });
+
 
 // GET WORD（all words of user）
 router.get("/:userId", async (req: Request, res: Response) => {

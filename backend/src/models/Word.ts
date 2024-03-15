@@ -9,9 +9,19 @@ export interface IWord extends Document {
 
 const WordSchema: Schema = new Schema(
   {
-    userId: { type: String, required: true },
-    word: { type: String, required: true },
-    meaning: { type: String, required: true },
+    userId: { 
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: 'User'
+    },
+    word: { 
+      type: String, 
+      required: true
+    },
+    meaning: { 
+      type: String, 
+      required: true
+    },
     isCorrect: { type: Boolean }
   },
   { timestamps: true }

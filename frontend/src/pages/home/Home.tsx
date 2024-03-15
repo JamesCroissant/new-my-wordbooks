@@ -4,9 +4,9 @@ import { Container, Button } from 'react-bootstrap';
 import "./Home.css";
 import logo from "../../assets/images/logo-mywordbooks.png";
 
-const Home: React.FC = () => {
+const Home = () => {
   return (
-    <Container className="py-5 text-center">
+    <Container className="text-center">
       <h1 className="homeTitle display-4 fw-bold">MY WORDBOOKS</h1>
       <img src={logo} alt="my-wordbooks-logo" className="homeLogo" />
       <p className="fs-4">分からない単語と意味を入力して、自分だけのオリジナル単語帳を作ろう！</p>

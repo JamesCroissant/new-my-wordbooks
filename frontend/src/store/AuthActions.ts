@@ -14,6 +14,15 @@ export const LoginError = (error: string) => ({
   payload: error,
 });
 
+export const UpdateUser = (user: User) => ({
+  type: "UPDATE_USER" as const,
+  payload: user,
+});
+
+export const DeleteUser = () => ({
+  type: "DELETE_USER" as const,
+});
+
 export const LogOut = () => ({
   type: "LOGOUT" as const,
 });
@@ -23,4 +32,6 @@ export type AuthAction =
   | ReturnType<typeof LoginStart>
   | ReturnType<typeof LoginSuccess>
   | ReturnType<typeof LoginError>
+  | ReturnType<typeof UpdateUser>
+  | ReturnType<typeof DeleteUser>
   | ReturnType<typeof LogOut>;

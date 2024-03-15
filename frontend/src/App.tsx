@@ -1,22 +1,46 @@
-import React, { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import './App.css';
-import Home from './pages/homePage/Home';
-import Login from "./pages/loginPage/Login";
-import { AuthContext } from './contexts/AuthContext';
-import Register from './pages/registerPage/Register';
+import Home from './pages/home/Home';
+import Login from "./pages/login/Login";
+import Register from './pages/register/Register';
+import Layout from './pages/Layout';
+import Main from './pages/main/Main';
+import Profile from './pages/profile/Profile';
+import Form from './pages/main/Main';
+import WordList from './pages/wordlist/WordList';
+import Quiz from './pages/quiz/Quiz';
+
+import { AuthContext } from './context/AuthContext';
+import NotFound from './pages/notfound/NotFound';
+import Result from './components/result/Result';
 
 
 function App() {
-  const { state } = useContext(AuthContext);
+  // const loggedIn = localStorage.getItem('user')
+  // console.log(loggedIn)
+  const { state, dispatch } = useContext(AuthContext);
+
+  // useEffect(() => {
+
+  // }, [])
 
   return (
     <div className="App">
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={state.user ? <Navigate to="/main" /> : <Login />} />
-          <Route path="/register" element={state.user ? <Navigate to="/main" /> : <Register />} />
+          <Route path="/login" element={ <Login />} />
+          <Route path="/register" element={<Register />} />
+
+          <Route path="/main" element={state.user ? <Layout /> : <Navigate replace to="/login" />}>
+            <Route index element={<Main />} />
+            <Route path="profile" element={<Profile />}/>
+            <Route path="words" element={<WordList />} />
+            <Route path="quiz" element={<Quiz />} />
+            <Route path="result" element={<Result />} />
+          </Route>
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </div>
