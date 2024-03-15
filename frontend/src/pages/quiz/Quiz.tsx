@@ -28,6 +28,7 @@ const Quiz = () => {
   const navigate = useNavigate();
   const { state, dispatch } = useContext(AuthContext);
   const userId = state.user?._id;
+  const baseURL = "https://new-my-wordbooks.onrender.com"
 
   const shuffleArray = (array: Word[]) =>  {
     for (let i = array.length - 1; i > 0; i--) {
@@ -48,7 +49,7 @@ const Quiz = () => {
       isCorrect: correct
     }
     setResults([...results, result]);
-    await axios.put(`http://localhost:5000/api/words/${result._id}`, result);
+    await axios.put(`${baseURL}/api/words/${result._id}`, result);
     setIsCorrect(correct)
     setUserAnswer('');
     setAnswerChecked(true);
@@ -59,7 +60,7 @@ const Quiz = () => {
     const fetchQuestions = async () => {
       try {
         setLoading(true);
-        const response = await axios.get<Word[]>(`http://localhost:5000/api/words/${userId}`);
+        const response = await axios.get<Word[]>(`${baseURL}/api/words/${userId}`);
         const words = response.data.map(({ _id, userId, word, meaning, isCorrect }) => ({
           _id,
           userId,

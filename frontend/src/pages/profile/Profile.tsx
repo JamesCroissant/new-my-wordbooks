@@ -17,7 +17,7 @@ const Profile = () => {
     isAdmin: state.user?.isAdmin
   });
   const [isEditing, setIsEditing] = useState(false);
-  const baseUrl = "http://localhost:5000";
+  const baseURL = "https://new-my-wordbooks.onrender.com"
 
   const handleEdit = () => {
     setIsEditing(true);
@@ -26,7 +26,7 @@ const Profile = () => {
   const handleUpdate = async () => {
     if (!editedUser) return;
     try {
-      await axios.put(`${baseUrl}/api/users/${editedUser._id}`, editedUser);
+      await axios.put(`${baseURL}/api/users/${editedUser._id}`, editedUser);
       dispatch({
         type: 'UPDATE_USER',
         payload: editedUser
@@ -44,7 +44,7 @@ const Profile = () => {
     const confirmDelete = window.confirm("Do you really want to delete user information?");
     if (confirmDelete) {
       try {
-        await axios.delete(`${baseUrl}/user/${editedUser._id}`);
+        await axios.delete(`${baseURL}/user/${editedUser._id}`);
         dispatch({
           type: 'DELETE_USER',
         });

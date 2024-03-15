@@ -15,6 +15,7 @@ const Main = () => {
   const { state, dispatch } = useContext(AuthContext);
 
   const userId = state.user?._id;
+  const baseURL = "https://new-my-wordbooks.onrender.com"
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -30,7 +31,7 @@ const Main = () => {
 
   const saveWordToDatabase = async (newWord: NewWord) => {
     try {
-      const response = await axios.post(`http://localhost:5000/api/words`, newWord);
+      const response = await axios.post(`${baseURL}/api/words`, newWord);
       console.log('YOU CAN SAVE THE DATA:', response.data);
       alert("YOU CAN SAVE THE DATA");
 
