@@ -49,7 +49,7 @@ const Profile = () => {
           type: 'DELETE_USER',
         });
         console.log('User deleted successfully');
-        // localStorage.removeItem('user');
+        localStorage.removeItem('user');
         navigate("/");
       } catch (err) {
         console.error('Failed to delete user', err);

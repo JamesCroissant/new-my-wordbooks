@@ -48,7 +48,7 @@ const Main = () => {
   useEffect(() => {
     if (!userId) return;
     const fetchWords = async () => {
-      const response = await axios.get(`http://localhost:5000/api/words/${userId}`);
+      const response = await axios.get(`${baseURL}/api/words/${userId}`);
       setWords(response.data);
     };
     fetchWords();
