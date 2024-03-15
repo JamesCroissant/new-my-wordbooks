@@ -9,7 +9,7 @@ const app: Express = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors({ origin: "https://new-my-wordbooks-main.onrender.com" }));
 app.use(bodyParser.json());
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);

@@ -12,14 +12,14 @@ const WordList = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const { state, dispatch } = useContext(AuthContext);
   const userId = state.user?._id;
-  const baseUrl = "http://localhost:5000";
+  const baseURL = "https://new-my-wordbooks.onrender.com"
 
   useEffect(() => {
     if(!userId) return;
     const fetchUserWords = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`${baseUrl}/api/words/${userId}`);
+        const response = await axios.get(`${baseURL}/api/words/${userId}`);
         setUserWords(response.data);
         setLoading(false);
       } catch (err) {
@@ -32,8 +32,8 @@ const WordList = () => {
 
   const handleDelete = async (id: string) => {
     try {
-      await axios.delete(`${baseUrl}/words/${id}`);
-      const response = await axios.get(`${baseUrl}/words/${userId}`);
+      await axios.delete(`${baseURL}/words/${id}`);
+      const response = await axios.get(`${baseURL}/words/${userId}`);
       setUserWords(response.data);
     } catch (err) {
       console.error("Error deleting word:", err);
