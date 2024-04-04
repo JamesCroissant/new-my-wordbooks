@@ -1,7 +1,7 @@
 # My Wordbooks
 
-This app is full-stack app for .
-It allows you to add word which you want to remember and quiz.
+This application is full-stack app for memorizing your own English words especially you don't understand.
+You can create your own vocabulary book by writing the word and meaning down in this app.
 
 ![screencapture-localhost-3000-2024-02-23-11_57_51](https://github.com/JamesCroissant/new-my-wordbooks/blob/main/frontend/public/mywordbooks.png)
 
